@@ -55,7 +55,11 @@ void setupFcm() {
   var initializationSettingsAndroid = const AndroidInitializationSettings('@mipmap/ic_launcher');
   var initializationSettings = InitializationSettings(
     android: initializationSettingsAndroid,
-   
+      iOS: IOSInitializationSettings(
+        onDidReceiveLocalNotification: (id, title, body, payload) {
+
+        },
+      )
   );
 
   //when the app is in foreground state and you click on notification.
