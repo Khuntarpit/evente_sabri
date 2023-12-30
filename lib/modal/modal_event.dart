@@ -52,9 +52,9 @@ class Event {
 
   factory Event.fromFirestore(DocumentSnapshot snapshot){
     Map data = snapshot.data() as Map<dynamic, dynamic>;
-    
-    
-  LatLng latLng = LatLng(data['mapsLatLink'], data['mapsLangLink']);
+
+
+    LatLng latLng = LatLng(double.parse(data['mapsLatLink'].toString()), double.parse(data['mapsLangLink'].toString()));
     return Event(
        category : data['category'],
     date  : data['date'],
