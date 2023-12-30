@@ -13,11 +13,7 @@ class HelperNotifications {
         const AndroidInitializationSettings('@mipmap/ic_launcher');
 
     var initializationSettings =
-        InitializationSettings(android: androidInitialize,iOS: IOSInitializationSettings(
-          onDidReceiveLocalNotification: (id, title, body, payload) {
-
-          },
-        ));
+        InitializationSettings(android: androidInitialize,);
    
 
     await FirebaseMessaging.instance
@@ -55,21 +51,16 @@ void setupFcm() {
   var initializationSettingsAndroid = const AndroidInitializationSettings('@mipmap/ic_launcher');
   var initializationSettings = InitializationSettings(
     android: initializationSettingsAndroid,
-      iOS: IOSInitializationSettings(
-        onDidReceiveLocalNotification: (id, title, body, payload) {
-
-        },
-      )
   );
 
   //when the app is in foreground state and you click on notification.
-  flutterLocalNotificationsPlugin.initialize(initializationSettings,
-      onSelectNotification: (payload) {
-        if (payload != null) {
-          Map<String, dynamic> data = json.decode(payload);
-          goToNextScreen(data);
-        }
-  });
+  // flutterLocalNotificationsPlugin.initialize(initializationSettings,
+  //     onSelectNotification: (payload) {
+  //       if (payload != null) {
+  //         Map<String, dynamic> data = json.decode(payload);
+  //         goToNextScreen(data);
+  //       }
+  // });
 
   //When the app is terminated, i.e., app is neither in foreground or background.
   FirebaseMessaging.instance.getInitialMessage().then((message) {
