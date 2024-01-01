@@ -13,11 +13,7 @@ class HelperNotifications {
         const AndroidInitializationSettings('@mipmap/ic_launcher');
 
     var initializationSettings =
-<<<<<<< HEAD
         InitializationSettings(android: androidInitialize,iOS: DarwinInitializationSettings());
-=======
-        InitializationSettings(android: androidInitialize, iOS: DarwinInitializationSettings(),);
->>>>>>> parent of dab6e7e (update ios)
    
 
     await FirebaseMessaging.instance
