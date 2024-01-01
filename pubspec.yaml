@@ -4,7 +4,7 @@ version: 0.0.1
 homepage:
 
 environment:
-  sdk: '>=2.19.6 <3.0.0'
+  sdk: '>=2.19.6 <3.5.3'
   flutter: ">=1.17.0"
 
 dependencies:
@@ -23,7 +23,7 @@ dev_dependencies:
   intl: 
   google_maps_flutter: ^2.2.1
   shared_preferences: 
-  flutter_local_notifications: ^9.9.1
+  flutter_local_notifications: ^14.1.1
   provider: ^6.0.3
   cloud_firestore: ^3.1.6
   get: 

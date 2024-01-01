@@ -13,7 +13,7 @@ class HelperNotifications {
         const AndroidInitializationSettings('@mipmap/ic_launcher');
 
     var initializationSettings =
-        InitializationSettings(android: androidInitialize,);
+        InitializationSettings(android: androidInitialize, iOS: DarwinInitializationSettings(),);
    
 
     await FirebaseMessaging.instance
@@ -51,6 +51,7 @@ void setupFcm() {
   var initializationSettingsAndroid = const AndroidInitializationSettings('@mipmap/ic_launcher');
   var initializationSettings = InitializationSettings(
     android: initializationSettingsAndroid,
+    iOS: DarwinInitializationSettings(),
   );
 
   //when the app is in foreground state and you click on notification.
